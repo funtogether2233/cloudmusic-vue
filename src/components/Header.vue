@@ -26,10 +26,7 @@
         <div class="switch"></div>
       </div>
       <div class="user">
-        <img
-          src="../assets/avatar.jpg"
-          alt="cloudmusic-logo"
-        />
+        <img src="../assets/avatar.jpg" alt="cloudmusic-logo" />
         <p>网易云音乐</p>
         <div class="switch"></div>
       </div>
@@ -41,7 +38,7 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 * {
   box-sizing: border-box;
 }
@@ -49,13 +46,17 @@ export default {};
   display: flex;
   align-items: center;
   height: 75px;
+  color: white;
   background-color: #ec4141;
-}
-
-.head .left {
-  display: flex;
-  flex: 1;
-  align-items: center;
+  .left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+  .right {
+    .left();
+    flex-direction: row-reverse;
+  }
 }
 
 .logo {
@@ -64,17 +65,14 @@ export default {};
   margin-left: 24px;
   margin-right: 103px;
   width: 155px;
-}
-.logo img {
-  border-radius: 50%;
-  height: 30px;
-}
-
-.logo p {
-  margin-left: 6px;
-  color: white;
-  font-size: 22px;
-  /* letter-spacing: 3px; */
+  img {
+    border-radius: 50%;
+    height: 30px;
+  }
+  p {
+    margin-left: 6px;
+    font-size: 22px;
+  }
 }
 
 .function-button {
@@ -105,36 +103,23 @@ export default {};
   border-radius: 50%;
 }
 
-.head .right {
-  display: flex;
-  flex: 1;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
-.user {
-  display: flex;
-  align-items: center;
-  /* margin-left: 24px;
-  margin-right: 103px;
-  width: 155px; */
-}
-.user img {
-  border-radius: 50%;
-  height: 35px;
-}
-
-.user p {
-  margin-left: 6px;
-  color: white;
-  font-size: 22px;
-  /* letter-spacing: 3px; */
-}
-
 .right-button {
   display: flex;
   justify-content: space-between;
   margin-right: 25px;
   width: 300px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  img {
+    border-radius: 50%;
+    height: 35px;
+  }
+  p {
+    margin-left: 6px;
+    font-size: 16px;
+  }
 }
 </style>
