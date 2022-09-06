@@ -2,30 +2,42 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3.0 + Vite" /> -->
   <Header></Header>
-  <Naver></Naver>
+  <div class="main">
+    <Naver></Naver>
+    <Home></Home>
+  </div>
+  <foot></foot>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Naver from "./components/Naver.vue";
 import Home from "./views/Home.vue";
+import foot from "./components/foot.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld,
-    Home,
     Header,
     Naver,
+    Home,
+    foot,
   },
 };
 </script>
 
-<style>
+<style lang="less">
 /* #app {
 } */
 body {
   margin: 0;
-  min-height: 100vh;
+  box-sizing: border-box;
+  min-width: 1275px;
+  min-height: 835px;
+}
+.main {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  height: 79vh;
 }
 </style>

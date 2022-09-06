@@ -54,10 +54,8 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-* {
-  box-sizing: border-box;
-}
 .head {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   height: 75px;
@@ -126,7 +124,7 @@ export default {};
     ::placeholder {
       color: #f2baba;
     }
-    .el-input__prefix{
+    .el-input__prefix {
       color: #f2baba;
     }
   }
