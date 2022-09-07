@@ -32,12 +32,12 @@ export default {
 body {
   margin: 0;
   box-sizing: border-box;
-  min-width: 1275px;
-  min-height: 835px;
+  min-width: 1022px;
+  min-height: 670px;
 }
 .main {
   display: flex;
   border-bottom: 1px solid #e0e0e0;
-  height: 79vh;
+  height: 82vh;
 }
 </style>

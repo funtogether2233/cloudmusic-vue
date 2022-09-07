@@ -1,9 +1,14 @@
 <template>
   <div class="footer">
-    <audio controls>
-      <source src="../assets/morning.mp3" />
-      Your browser does not support the <code>audio</code> element.
-    </audio>
+    <div class="song">
+      <img src="../assets/cloudmusic-logo.jpg" alt="cover" />
+    </div>
+    <div class="control">
+      <audio controls>
+        <source src="../assets/morning.mp3" />
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+    </div>
   </div>
 </template>
 
@@ -15,9 +20,20 @@ export default {};
 .footer {
   box-sizing: border-box;
   display: flex;
-  justify-content:center;
   align-items: center;
-  height: 90px;
-  border-top: 1px solid #f8f8f8;
+  justify-content: center;
+  .song {
+    img {
+      height: 48px;
+      width: 48px;
+    }
+  }
+  .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    border-top: 1px solid #f8f8f8;
+  }
 }
 </style>
