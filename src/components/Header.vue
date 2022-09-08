@@ -34,8 +34,9 @@
         <el-icon size="18px"><Setting /></el-icon>
         <el-icon size="18px"><Message /></el-icon>
         <div class="divider"></div>
-        <el-icon size="16px"><FullScreen /></el-icon>
+        
         <el-icon size="16px"><Minus /></el-icon>
+        <el-icon size="16px"><FullScreen /></el-icon>
         <el-icon size="16px"><Close /></el-icon>
       </div>
       <div class="user">

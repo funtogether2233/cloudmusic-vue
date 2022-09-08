@@ -2,12 +2,24 @@
   <div class="footer">
     <div class="song">
       <img src="../assets/cloudmusic-logo.jpg" alt="cover" />
+      <div class="text">
+        <div class="name">
+          歌曲名<el-icon size="18px"><Star /></el-icon>
+        </div>
+        <div class="author">作者</div>
+      </div>
     </div>
     <div class="control">
       <audio controls>
         <source src="../assets/morning.mp3" />
         Your browser does not support the <code>audio</code> element.
       </audio>
+    </div>
+    <div class="song-setting">
+      <div class="button">
+        <el-icon size="20px"><Files /></el-icon>
+      </div>
+      <div class="quality">音质</div>
     </div>
   </div>
 </template>
@@ -17,23 +29,62 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-.footer {
-  box-sizing: border-box;
+.flex {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.footer {
+  box-sizing: border-box;
+  .flex();
+  color: #373737;
   .song {
+    .flex();
+    flex: 1;
     img {
+      margin: 0 12px;
       height: 48px;
       width: 48px;
     }
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 48px;
+      .name {
+        .flex();
+        font-size: 16px;
+      }
+      .author {
+        // margin: 8px 0;
+        font-size: 10px;
+      }
+    }
   }
   .control {
-    display: flex;
-    align-items: center;
+    .flex();
     justify-content: center;
     height: 72px;
     border-top: 1px solid #f8f8f8;
+  }
+  .song-setting {
+    .flex();
+    flex-direction: row-reverse;
+    flex: 1;
+    .button {
+      .flex();
+      margin-right: 20px;
+    }
+    .quality {
+      .flex();
+      justify-content: center;
+      margin-right: 20px;
+      border: 1px solid #ec4141;
+      border-radius: 2px;
+      height: 18px;
+      width: 32px;
+      color: #ec4141;
+      font-size: 12px;
+    }
   }
 }
 </style>

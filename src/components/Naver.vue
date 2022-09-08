@@ -115,6 +115,7 @@ export default {
       }
       :hover {
         background-color: #f6f6f7;
+        font-size: 16px;
         font-weight: bold;
       }
     }
