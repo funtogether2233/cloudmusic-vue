@@ -9,7 +9,12 @@
       <li>最新音乐</li>
     </ul>
     <div class="carousel"></div>
-    <div class="recommend"></div>
+    <div class="recommend">
+      <div class="title">
+        推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
+      </div>
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -18,6 +23,10 @@ export default {};
 </script>
 
 <style lang="less" scoped>
+.flex {
+  display: flex;
+  align-items: center;
+}
 .home {
   box-sizing: border-box;
   overflow: auto;
@@ -28,8 +37,7 @@ export default {};
   .nav {
     box-sizing: border-box;
     list-style: none;
-    display: flex;
-    align-items: center;
+    .flex();
     flex-direction: row;
     margin: 0;
     padding: 0 0 0 30px;
@@ -49,6 +57,14 @@ export default {};
     height: 240px;
     width: 100%;
     background-color: cyan;
+  }
+  .recommend {
+    margin: 15px 30px;
+    .title {
+      .flex();
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 }
 </style>
