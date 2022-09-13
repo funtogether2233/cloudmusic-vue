@@ -29,6 +29,9 @@ export default {
 <style lang="less">
 /* #app {
 } */
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   margin: 0;
   box-sizing: border-box;
@@ -37,7 +40,6 @@ body {
 }
 .main {
   display: flex;
-  border-bottom: 1px solid #e0e0e0;
   height: 82vh;
 }
 </style>

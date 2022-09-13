@@ -35,6 +35,7 @@ export default {};
 }
 .footer {
   box-sizing: border-box;
+  border-top: 1px solid #e0e0e0;
   .flex();
   color: #373737;
   .song {

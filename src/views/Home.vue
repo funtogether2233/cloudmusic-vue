@@ -31,7 +31,6 @@ export default {};
   box-sizing: border-box;
   overflow: auto;
   flex: 1;
-  border-left: 1px solid #e0e0e0;
   height: 100%;
 
   .nav {

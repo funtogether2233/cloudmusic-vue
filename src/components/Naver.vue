@@ -1,6 +1,5 @@
 <template>
   <div class="naver">
-    <!-- <div class="list" ref="content"> -->
     <div class="list">
       <ul class="button">
         <li>发现音乐</li>
@@ -44,8 +43,6 @@
         </li>
       </ul>
     </div>
-    <!-- 滚动条 -->
-    <!-- <div class="scroll" ref="scroll"><div class="rail" ref="rail"></div></div> -->
   </div>
 </template>
 
@@ -54,50 +51,43 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     // 滚动条
-    // const content = ref(null),
-    //   scroll = ref(null),
-    //   rail = ref(null);
+    // const content = ref(null);
     // onMounted(() => {
-    //   console.log(
-    //     content.value.clientHeight,
-    //     content.value.scrollHeight,
-    //     content.value.clientHeight / content.value.scrollHeight
-    //   );
-    //   rail.value.style.height =
-    //     (content.value.clientHeight / content.value.scrollHeight) * 100 + "%";
-    //   content.value.addEventListener("scroll", function (e) {
-    //     // 添加滚动事件
-    //     console.log("scrollTop", e.target.scrollTop);
-    //     rail.value.style.transform =
-    //       "translateY(" +
-    //       (e.target.scrollTop * 100) / content.value.clientHeight +
-    //       "%)";
-    //   });
     // });
     // return {
     //   content,
-    //   scroll,
-    //   rail,
     // };
   },
 };
 </script>
 
 <style lang="less" scoped>
+// 滚动条
+::-webkit-scrollbar {
+  display: initial;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #e0e0e0;
+  visibility: hidden;
+}
+.naver:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
 .naver {
   display: flex;
-  // overflow: hiden;
   overflow: auto;
   box-sizing: border-box;
-  border-right: 1px solid #f8f8f8;
+  border-right: 1px solid #e0e0e0;
   width: 200px;
+
   .list {
-    // overflow: auto;
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin: 12px;
-    // margin-right: -17px;
+    margin: 12px 2px 12px 12px;
     ul {
       list-style: none;
       margin: 0;
@@ -126,17 +116,5 @@ export default {
       }
     }
   }
-  //   .scroll {
-  //     width: 12px;
-  //     background-color: #f5f5f5;
-  //     transition: all 0.3s ease-out;
-  //     visibility: visible;
-  //     .rail {
-  //       width: 100%;
-  //       background-color: #ccc;
-  //       border-radius: 6px;
-  //       transition: background-color 0.3s;
-  //     }
-  //   }
 }
 </style>
