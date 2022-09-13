@@ -1,6 +1,7 @@
 <template>
   <div class="naver">
-    <div class="list" ref="content">
+    <!-- <div class="list" ref="content"> -->
+    <div class="list">
       <ul class="button">
         <li>发现音乐</li>
         <li>播客</li>
@@ -43,7 +44,8 @@
         </li>
       </ul>
     </div>
-    <div class="scroll" ref="scroll"><div class="rail" ref="rail"></div></div>
+    <!-- 滚动条 -->
+    <!-- <div class="scroll" ref="scroll"><div class="rail" ref="rail"></div></div> -->
   </div>
 </template>
 
@@ -51,31 +53,32 @@
 import { onMounted, ref } from "vue";
 export default {
   setup() {
-    const content = ref(null),
-      scroll = ref(null),
-      rail = ref(null);
-    onMounted(() => {
-      console.log(
-        content.value.clientHeight,
-        content.value.scrollHeight,
-        content.value.clientHeight / content.value.scrollHeight
-      );
-      rail.value.style.height =
-        (content.value.clientHeight / content.value.scrollHeight) * 100 + "%";
-      content.value.addEventListener("scroll", function (e) {
-        // 添加滚动事件
-        console.log("scrollTop", e.target.scrollTop);
-        rail.value.style.transform =
-          "translateY(" +
-          (e.target.scrollTop * 100) / content.value.clientHeight +
-          "%)";
-      });
-    });
-    return {
-      content,
-      scroll,
-      rail,
-    };
+    // 滚动条
+    // const content = ref(null),
+    //   scroll = ref(null),
+    //   rail = ref(null);
+    // onMounted(() => {
+    //   console.log(
+    //     content.value.clientHeight,
+    //     content.value.scrollHeight,
+    //     content.value.clientHeight / content.value.scrollHeight
+    //   );
+    //   rail.value.style.height =
+    //     (content.value.clientHeight / content.value.scrollHeight) * 100 + "%";
+    //   content.value.addEventListener("scroll", function (e) {
+    //     // 添加滚动事件
+    //     console.log("scrollTop", e.target.scrollTop);
+    //     rail.value.style.transform =
+    //       "translateY(" +
+    //       (e.target.scrollTop * 100) / content.value.clientHeight +
+    //       "%)";
+    //   });
+    // });
+    // return {
+    //   content,
+    //   scroll,
+    //   rail,
+    // };
   },
 };
 </script>
@@ -83,18 +86,18 @@ export default {
 <style lang="less" scoped>
 .naver {
   display: flex;
-  overflow: hiden;
+  // overflow: hiden;
+  overflow: auto;
   box-sizing: border-box;
   border-right: 1px solid #f8f8f8;
   width: 200px;
-  //   height: 100%;
   .list {
-    // height: 100%;
-    overflow: scroll;
+    // overflow: auto;
     display: flex;
     flex-direction: column;
     flex: 1;
     margin: 12px;
+    // margin-right: -17px;
     ul {
       list-style: none;
       margin: 0;
@@ -123,19 +126,17 @@ export default {
       }
     }
   }
-  .scroll {
-    // height: 100%;
-    width: 12px;
-    background-color: #f5f5f5;
-    transition: all 0.3s ease-out;
-    visibility: visible;
-    .rail {
-      //   height: 100%;
-      width: 100%;
-      background-color: #ccc;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-  }
+  //   .scroll {
+  //     width: 12px;
+  //     background-color: #f5f5f5;
+  //     transition: all 0.3s ease-out;
+  //     visibility: visible;
+  //     .rail {
+  //       width: 100%;
+  //       background-color: #ccc;
+  //       border-radius: 6px;
+  //       transition: background-color 0.3s;
+  //     }
+  //   }
 }
 </style>
