@@ -1,6 +1,6 @@
 <template>
-  <div class="naver" ref="naver">
-    <div class="list">
+  <div class="naver">
+    <div class="list" ref="content">
       <ul class="button">
         <li>发现音乐</li>
         <li>播客</li>
@@ -43,6 +43,7 @@
         </li>
       </ul>
     </div>
+    <div class="scroll" ref="scroll"><div class="rail" ref="rail"></div></div>
   </div>
 </template>
 
@@ -50,32 +51,31 @@
 import { onMounted, ref } from "vue";
 export default {
   setup() {
-    // const naver = ref(null);
-    // onMounted(() => {
-    //   console.log(naver.value.clientHeight);
-    //   let naverClientHeight = naver.value.clientHeight,
-    //     naverScrollHeight = naver.value.scrollHeight;
-    //   let present = naverClientHeight / naverScrollHeight;
-    //   //   let scrollWarp = document.querySelector(".rail");
-    //   //   scrollWarp.style.height = present * 100 + "%";
-    // });
-    // return {
-    //   naver,
-    // };
-    // let naverScrollHeight, naverClientHeight; // 父高度,滚动高度
-    // let warp = document.getElementsByClassName("naver");
-    // let warp = document.querySelector(".naver");
-    // console.log(warp);
-    // console.log(warp[0]);
-    // naverClientHeight = warp.clientHeight; // 获取父高度
-    // naverScrollHeight = warp[0].scrollHeight; // 获取父可滚动高度
-    // let present = fatherClientHeight / fatherScrollHeight; // 计算滚动条应该占多高
-    // let scrollWarp = document.querySelector('.rail');
-    // scrollWarp.style.height = present*100 + '%'; // 用百分比计算rail的高度
-    // warp.addEventListener('scroll',function(e){ // 添加滚动事件
-    //   console.log(e.target.scrollTop);
-    //   scrollWarp.style.transform = 'translateY(' + e.target.scrollTop * 100/fatherClientHeight + '%)'
-    // })
+    const content = ref(null),
+      scroll = ref(null),
+      rail = ref(null);
+    onMounted(() => {
+      console.log(
+        content.value.clientHeight,
+        content.value.scrollHeight,
+        content.value.clientHeight / content.value.scrollHeight
+      );
+      rail.value.style.height =
+        (content.value.clientHeight / content.value.scrollHeight) * 100 + "%";
+      content.value.addEventListener("scroll", function (e) {
+        // 添加滚动事件
+        console.log("scrollTop", e.target.scrollTop);
+        rail.value.style.transform =
+          "translateY(" +
+          (e.target.scrollTop * 100) / content.value.clientHeight +
+          "%)";
+      });
+    });
+    return {
+      content,
+      scroll,
+      rail,
+    };
   },
 };
 </script>
@@ -83,11 +83,14 @@ export default {
 <style lang="less" scoped>
 .naver {
   display: flex;
-  overflow: auto;
+  overflow: hiden;
   box-sizing: border-box;
   border-right: 1px solid #f8f8f8;
   width: 200px;
+  //   height: 100%;
   .list {
+    // height: 100%;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -118,6 +121,20 @@ export default {
         font-size: 16px;
         font-weight: bold;
       }
+    }
+  }
+  .scroll {
+    // height: 100%;
+    width: 12px;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease-out;
+    visibility: visible;
+    .rail {
+      //   height: 100%;
+      width: 100%;
+      background-color: #ccc;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
   }
 }
