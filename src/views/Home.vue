@@ -25,6 +25,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+::-webkit-scrollbar {
+  display: initial;
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #e0e0e0;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -57,7 +65,7 @@ export default {
   .carousel {
     height: 240px;
     width: 100%;
-    background-color: cyan;
+    background-color: lightcoral;
   }
   .recommend {
     margin: 15px 30px;
