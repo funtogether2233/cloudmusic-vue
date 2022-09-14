@@ -10,10 +10,10 @@
       </div>
     </div>
     <div class="control">
-      <audio controls>
+      <!-- <audio controls>
         <source src="../assets/morning.mp3" />
         Your browser does not support the <code>audio</code> element.
-      </audio>
+      </audio> -->
       <AudioPlayer></AudioPlayer>
     </div>
     <div class="song-setting">
