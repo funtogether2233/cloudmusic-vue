@@ -14,6 +14,7 @@
         <source src="../assets/morning.mp3" />
         Your browser does not support the <code>audio</code> element.
       </audio>
+      <AudioPlayer></AudioPlayer>
     </div>
     <div class="song-setting">
       <div class="button">
@@ -25,7 +26,13 @@
 </template>
 
 <script>
-export default {};
+import AudioPlayer from "./AudioPlayer.vue";
+export default {
+  name: "Foot",
+  components: {
+    AudioPlayer,
+  },
+};
 </script>
 
 <style lang="less" scoped>

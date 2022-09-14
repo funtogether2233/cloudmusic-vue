@@ -49,6 +49,7 @@
 <script>
 import { onMounted, ref } from "vue";
 export default {
+  name: "Naver",
   setup() {
     // 滚动条
     // const content = ref(null);

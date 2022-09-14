@@ -6,14 +6,14 @@
     <Naver></Naver>
     <Home></Home>
   </div>
-  <foot></foot>
+  <Foot></Foot>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Naver from "./components/Naver.vue";
 import Home from "./views/Home.vue";
-import foot from "./components/foot.vue";
+import Foot from "./components/Foot.vue";
 
 export default {
   name: "App",
@@ -21,7 +21,7 @@ export default {
     Header,
     Naver,
     Home,
-    foot,
+    Foot,
   },
 };
 </script>

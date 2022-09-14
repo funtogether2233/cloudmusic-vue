@@ -34,7 +34,7 @@
         <el-icon size="18px"><Setting /></el-icon>
         <el-icon size="18px"><Message /></el-icon>
         <div class="divider"></div>
-        
+
         <el-icon size="16px"><Minus /></el-icon>
         <el-icon size="16px"><FullScreen /></el-icon>
         <el-icon size="16px"><Close /></el-icon>
@@ -51,7 +51,9 @@
 <script>
 import { ref } from "vue";
 const searchInfo = ref("");
-export default {};
+export default {
+  name: "Header",
+};
 </script>
 
 <style lang="less" scoped>
