@@ -10,10 +10,6 @@
       </div>
     </div>
     <div class="control">
-      <!-- <audio controls>
-        <source src="../assets/morning.mp3" />
-        Your browser does not support the <code>audio</code> element.
-      </audio> -->
       <AudioPlayer></AudioPlayer>
     </div>
     <div class="song-setting">
@@ -44,6 +40,7 @@ export default {
   box-sizing: border-box;
   border-top: 1px solid #e0e0e0;
   .flex();
+  height: 72px;
   color: #373737;
   .song {
     .flex();
@@ -71,8 +68,6 @@ export default {
   .control {
     .flex();
     justify-content: center;
-    height: 72px;
-    border-top: 1px solid #f8f8f8;
   }
   .song-setting {
     .flex();

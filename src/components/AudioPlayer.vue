@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <audio
       @canplay="getDuration"
       controls
@@ -12,34 +12,38 @@
     </audio>
     <div class="card">
       <div class="option">
-        <span class="pre">
+        <div class="pre">
           <!-- 快退 -->
-          <el-icon size="12px"><ArrowLeft /></el-icon>
-        </span>
-        <span class="play" @click="handlePauseOrPlay">
-          <el-icon size="35px" color="#3853FE">
+          <el-icon size="12px" color="#333333"><ArrowLeft /></el-icon>
+        </div>
+        <div class="play" @click="handlePauseOrPlay">
+          <el-icon size="36px" color="#333333">
             <video-pause v-show="!paused" />
             <video-play v-show="paused" />
           </el-icon>
-        </span>
-        <span class="next">
+        </div>
+        <div class="next">
           <!-- 快进 -->
-          <el-icon size="12px"><ArrowRight /></el-icon>
-        </span>
-      </div>
-      <div
-        class="progress"
-        ref="progress"
-        @click="clickProgress"
-        @mouseup="handleMouseup"
-      >
-        <div class="currentProgress" ref="currentProgress">
-          <span class="circle" ref="circle" @mousedown="handleMousedown"></span>
+          <el-icon size="12px" color="#333333"><ArrowRight /></el-icon>
         </div>
       </div>
-      <div class="time">
-        <span class="startTime">{{ currentDuration }}</span>
-        <span class="endTime">{{ duration }}</span>
+      <div class="progress-bar">
+        <div class="time startTime">{{ currentDuration }}</div>
+        <div
+          class="progress"
+          ref="progress"
+          @click="clickProgress"
+          @mouseup="handleMouseup"
+        >
+          <div class="currentProgress" ref="currentProgress">
+            <span
+              class="circle"
+              ref="circle"
+              @mousedown="handleMousedown"
+            ></span>
+          </div>
+        </div>
+        <div class="time endTime">{{ duration }}</div>
       </div>
     </div>
   </div>
@@ -163,64 +167,62 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.flex {
+  display: flex;
+  align-items: center;
+}
 .card {
   box-sizing: border-box;
-  width: 300px;
-  padding: 0 30px;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.03);
   .option {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
+    .flex();
+    justify-content: center;
     .play,
     .pre,
     .next {
-      display: flex;
-      padding: 0 2px;
-      align-items: center;
+      .flex();
+      margin: 0 16px;
       cursor: pointer;
     }
   }
-  .progress {
-    height: 7px;
-    border-radius: 3px;
-    width: 100%;
-    background-color: #dadfea;
-    cursor: pointer;
-
-    .currentProgress {
-      position: relative;
-      height: 100%;
-      width: 0;
-      background-color: #3853fe;
-      border-radius: 3px;
-
-      .circle {
-        position: absolute;
-        right: -6px;
-        top: -2px;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1px solid #3853fe;
-        background-color: #fff;
-
-        &:hover {
-          width: 12px;
-          height: 12px;
-          top: -3px;
+  .progress-bar {
+    .flex();
+    justify-content: center;
+    .progress {
+      border-radius: 1px;
+      height: 3px;
+      width: 352px;
+      background-color: #cecece;
+      // cursor: pointer;
+      .currentProgress {
+        position: relative;
+        border-radius: 3px;
+        height: 100%;
+        width: 0;
+        background-color: #ff4e4e;
+        .circle {
+          position: absolute;
+          visibility: hidden;
           border-radius: 50%;
+          right: -5px;
+          top: -2px;
+          width: 9px;
+          height: 9px;
+          background-color: #ec4141;
         }
       }
     }
-  }
-  .time {
-    display: flex;
-    justify-content: space-between;
-    color: #777a85;
-    font-size: 12px;
+    .progress:hover {
+      height: 5px;
+      border-radius: 2px;
+      .circle {
+        visibility: initial;
+      }
+    }
+    .time {
+      margin: 0 6px;
+      color: #cecece;
+      font-size: 8px;
+    }
   }
 }
 </style>
