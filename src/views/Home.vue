@@ -8,31 +8,44 @@
       <li>歌手</li>
       <li>最新音乐</li>
     </ul>
-    <div class="carousel">
-      <swiper
-        :modules="modules"
-        :loop="true"
-        :slides-per-view="3"
-        :space-between="20"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        navigation
-        :pagination="{ clickable: true }"
-        :scrollbar="{ draggable: true }"
-      >
-        <!-- loop可循环轮播，autoplay可自动播放 -->
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-      </swiper>
-    </div>
-    <div class="recommend">
-      <div class="title">
-        推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
+    <div class="content">
+      <div class="carousel">
+        <swiper
+          :modules="modules"
+          :loop="true"
+          :slides-per-view="3"
+          :space-between="-50"
+          :autoplay="{ delay: 4000, disableOnInteraction: false }"
+          navigation
+          :pagination="{ clickable: true }"
+          :scrollbar="{ draggable: true }"
+        >
+          <!-- loop可循环轮播，autoplay可自动播放 -->
+          <swiper-slide>Slide 1</swiper-slide>
+          <swiper-slide>Slide 2</swiper-slide>
+          <swiper-slide>Slide 3</swiper-slide>
+          <swiper-slide>Slide 4</swiper-slide>
+          <swiper-slide>Slide 5</swiper-slide>
+          <swiper-slide>Slide 6</swiper-slide>
+        </swiper>
       </div>
-      <div></div>
+      <div class="recommend">
+        <div class="title">
+          推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
+        </div>
+        <div class="playlist-content">
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+          <div class="playlist-box"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +95,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.swiper-slide {
+  height: 240px;
+  font-size: 30px;
+  text-align: center;
+  background-color: pink;
+}
+
 ::-webkit-scrollbar {
   display: initial;
   width: 6px;
@@ -118,17 +138,32 @@ export default {
       font-weight: bold;
     }
   }
-  .carousel {
-    height: 240px;
-    width: 100%;
-    background-color: lightcoral;
-  }
-  .recommend {
-    margin: 15px 30px;
-    .title {
-      .flex();
-      font-size: 18px;
-      font-weight: bold;
+  .content {
+    margin: 0 auto;
+    width: 1100px;
+    .carousel {
+      height: 240px;
+      width: 100%;
+      background-color: lightcoral;
+    }
+    .recommend {
+      margin: 15px 0px;
+      .title {
+        .flex();
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .playlist-content {
+        .flex();
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .playlist-box {
+          margin-bottom: 24px;
+          height: 250px;
+          width: 206px;
+          background-color: pink;
+        }
+      }
     }
   }
 }
