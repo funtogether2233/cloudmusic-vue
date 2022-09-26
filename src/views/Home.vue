@@ -14,11 +14,12 @@
           :modules="modules"
           :loop="true"
           :slides-per-view="3"
-          :space-between="-50"
-          :autoplay="{ delay: 4000, disableOnInteraction: false }"
+          :space-between="50"
+          :autoplay="{ delay: 5000, disableOnInteraction: false }"
           navigation
           :pagination="{ clickable: true }"
-          :scrollbar="{ draggable: true }"
+          :parallax="true"
+          :data-swiper-parallax-scale="0.5"
         >
           <!-- loop可循环轮播，autoplay可自动播放 -->
           <swiper-slide>Slide 1</swiper-slide>
@@ -84,23 +85,15 @@
 // 引入swiper组件
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue.js";
 // 引入swiper样式（按需导入）
-// import "swiper/less";
-// import "swiper/less/pagination"; // 轮播图底面的小圆点
-// import "swiper/less/navigation"; // 轮播图两边的左右箭头
-// import "swiper/less/scrollbar"; // 轮播图的滚动条
 import "swiper/swiper.less";
+import "swiper/modules/autoplay/autoplay.less"; // 自动播放
 import "swiper/modules/pagination/pagination.less"; // 轮播图底面的小圆点
 import "swiper/modules/navigation/navigation.less"; // 轮播图两边的左右箭头
-import "swiper/modules/scrollbar/scrollbar.less"; // 轮播图的滚动条
-// import "swiper/swiper.min.css";
-// import "swiper/modules/pagination/pagination.min.css"; // 轮播图底面的小圆点
-// import "swiper/modules/navigation/navigation.min.css"; // 轮播图两边的左右箭头
-// import "swiper/modules/scrollbar/scrollbar.min.css"; // 轮播图的滚动条
+import "swiper/modules/parallax/parallax.less"; // 视差效果
 // 引入swiper核心和所需模块
-import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper";
+import { Autoplay, Pagination, Navigation, Parallax } from "swiper";
 // 在modules加入要使用的模块
-const modules = [Autoplay, Pagination, Navigation, Scrollbar];
-// const modules = [Ally, Pagination, Navigation, Scrollbar];
+const modules = [Autoplay, Pagination, Navigation, Parallax];
 
 export default {
   name: "Home",
@@ -118,18 +111,20 @@ export default {
     return {
       onSwiper,
       onSlideChange,
-      modules: [Autoplay, Pagination, Navigation, Scrollbar],
+      modules: [Autoplay, Pagination, Navigation, Parallax],
     };
   },
 };
 </script>
 
 <style lang="less" scoped>
-.swiper-slide {
-  height: 240px;
-  font-size: 30px;
-  text-align: center;
-  background-color: pink;
+.swiper::v-deep {
+  .swiper-slide {
+    height: 240px;
+    font-size: 30px;
+    text-align: center;
+    background-color: pink;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -191,7 +186,7 @@ export default {
           margin-bottom: 24px;
           height: 250px;
           width: 206px;
-        //   background-color: pink;
+          //   background-color: pink;
           img {
             border-radius: 5px;
             height: 206px;
