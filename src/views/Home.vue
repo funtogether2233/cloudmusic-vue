@@ -12,22 +12,58 @@
       <div class="carousel">
         <swiper
           :modules="modules"
-          :loop="true"
-          :slides-per-view="3"
-          :space-between="50"
-          :autoplay="{ delay: 5000, disableOnInteraction: false }"
+          grabCursor
+          :slidesPerView="2"
+          :slidesPerview="auto"
+          centeredSlides
+          :spaceBetween="0"
+          loop
           navigation
           :pagination="{ clickable: true }"
-          :parallax="true"
-          :data-swiper-parallax-scale="0.5"
+          parallax
         >
-          <!-- loop可循环轮播，autoplay可自动播放 -->
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-          <swiper-slide>Slide 4</swiper-slide>
-          <swiper-slide>Slide 5</swiper-slide>
-          <swiper-slide>Slide 6</swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="38%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="38%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="38%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
+          <!-- <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="50%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="50%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="50%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide> -->
         </swiper>
       </div>
       <div class="recommend">
@@ -119,11 +155,35 @@ export default {
 
 <style lang="less" scoped>
 .swiper::v-deep {
+  --swiper-pagination-color: #ec4141;
+  --swiper-navigation-size: 24px;
+  //   .swiper-wrapper {
+  //     position: static;
+  //   }
+  //   .swiper-button-prev {
+  //     float: left;
+  //     position: static;
+  //   }
+  //   .swiper-button-next {
+  //     position: static;
+  //   }
+  .swiper-pagination {
+    position: static;
+  }
+  .swiper-slide-active {
+    img {
+      transform: translateZ(-800px);
+    }
+
+    // position: fixed;
+    // top: 0;
+  }
   .swiper-slide {
-    height: 240px;
-    font-size: 30px;
-    text-align: center;
-    background-color: pink;
+    img {
+      border-radius: 5px;
+      height: 198px;
+      width: 540px;
+    }
   }
 }
 
@@ -167,6 +227,7 @@ export default {
     margin: 0 auto;
     width: 1100px;
     .carousel {
+      .flex();
       height: 240px;
       width: 100%;
       background-color: lightcoral;
