@@ -4,7 +4,7 @@
     <Naver></Naver>
     <Home></Home>
   </div>
-  <Foot></Foot>
+  <footer><Foot></Foot></footer>
 </template>
 
 <script>
@@ -38,6 +38,15 @@ body {
 }
 .main {
   display: flex;
-  height: 82vh;
+  min-height: 100vh;
+  //   position: relative;
+  //   top: 0;
+  //   bottom: 72px;
+  //   height: auto;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 </style>

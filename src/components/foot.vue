@@ -42,6 +42,7 @@ export default {
   .flex();
   height: 72px;
   color: #373737;
+  background-color: white;
   .song {
     .flex();
     flex: 1;

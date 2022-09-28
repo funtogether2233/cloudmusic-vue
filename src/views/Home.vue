@@ -18,6 +18,7 @@
           centeredSlides
           :spaceBetween="0"
           loop
+          :autoplay="{ delay: 5000, disableOnInteraction: false }"
           navigation
           :pagination="{ clickable: true }"
           parallax
