@@ -43,13 +43,6 @@
               data-swiper-parallax-scale="0.8"
             />
           </swiper-slide>
-          <!-- <swiper-slide>
-            <img
-              src="../assets/t2.jpg"
-              data-swiper-parallax="50%"
-              data-swiper-parallax-scale="0.8"
-            />
-          </swiper-slide>
           <swiper-slide>
             <img
               src="../assets/t2.jpg"
@@ -63,7 +56,14 @@
               data-swiper-parallax="50%"
               data-swiper-parallax-scale="0.8"
             />
-          </swiper-slide> -->
+          </swiper-slide>
+          <swiper-slide>
+            <img
+              src="../assets/t2.jpg"
+              data-swiper-parallax="50%"
+              data-swiper-parallax-scale="0.8"
+            />
+          </swiper-slide>
         </swiper>
       </div>
       <div class="recommend">
@@ -157,26 +157,17 @@ export default {
 .swiper::v-deep {
   --swiper-pagination-color: #ec4141;
   --swiper-navigation-size: 24px;
-  //   .swiper-wrapper {
-  //     position: static;
-  //   }
-  //   .swiper-button-prev {
-  //     float: left;
-  //     position: static;
-  //   }
-  //   .swiper-button-next {
-  //     position: static;
-  //   }
+  .swiper-button-prev {
+    top: 40%;
+  }
+  .swiper-button-next {
+    top: 40%;
+  }
   .swiper-pagination {
     position: static;
   }
   .swiper-slide-active {
-    img {
-      transform: translateZ(-800px);
-    }
-
-    // position: fixed;
-    // top: 0;
+    z-index: 2;
   }
   .swiper-slide {
     img {
@@ -205,16 +196,19 @@ export default {
   flex: 1;
   height: 100%;
   .nav {
+    z-index: 2;
     box-sizing: border-box;
     list-style: none;
     .flex();
     flex-direction: row;
+    position: sticky;
+    top: 0;
     margin: 0;
-    padding: 0 0 0 30px;
+    padding-left: 30px;
     height: 60px;
     width: 100%;
     color: #373737;
-    font-size: 16px;
+    background-color: white;
     li {
       margin-right: 20px;
     }
@@ -230,7 +224,7 @@ export default {
       .flex();
       height: 240px;
       width: 100%;
-      background-color: lightcoral;
+      //   background-color: lightcoral;
     }
     .recommend {
       margin: 15px 0px;
