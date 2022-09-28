@@ -46,21 +46,21 @@
           <swiper-slide>
             <img
               src="../assets/t2.jpg"
-              data-swiper-parallax="50%"
+              data-swiper-parallax="38%"
               data-swiper-parallax-scale="0.8"
             />
           </swiper-slide>
           <swiper-slide>
             <img
               src="../assets/t2.jpg"
-              data-swiper-parallax="50%"
+              data-swiper-parallax="38%"
               data-swiper-parallax-scale="0.8"
             />
           </swiper-slide>
           <swiper-slide>
             <img
               src="../assets/t2.jpg"
-              data-swiper-parallax="50%"
+              data-swiper-parallax="38%"
               data-swiper-parallax-scale="0.8"
             />
           </swiper-slide>
@@ -157,11 +157,14 @@ export default {
 .swiper::v-deep {
   --swiper-pagination-color: #ec4141;
   --swiper-navigation-size: 24px;
+  --swiper-navigation-color: white;
   .swiper-button-prev {
-    top: 40%;
+    top: 45%;
+    left: 20px;
   }
   .swiper-button-next {
-    top: 40%;
+    top: 45%;
+    right: 20px;
   }
   .swiper-pagination {
     position: static;
