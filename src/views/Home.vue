@@ -197,8 +197,8 @@ export default {
 .home {
   box-sizing: border-box;
   overflow: auto;
-  flex: 1;
   height: 100%;
+  width: 100%;
   .nav {
     z-index: 2;
     box-sizing: border-box;

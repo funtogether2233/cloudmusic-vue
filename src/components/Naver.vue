@@ -82,8 +82,8 @@ export default {
   overflow: auto;
   box-sizing: border-box;
   border-right: 1px solid #e0e0e0;
-  width: 200px;
-
+  height: 100%;
+  width: 100%;
   .list {
     display: flex;
     flex-direction: column;

@@ -69,7 +69,8 @@ export default {
 .head {
   box-sizing: border-box;
   .flex();
-  height: 60px;
+  height: 100%;
+  width: 100%;
   background-color: #ec4141;
   color: white;
   .left {

@@ -1,10 +1,18 @@
 <template>
-  <Header></Header>
-  <div class="main">
-    <Naver></Naver>
-    <Home></Home>
-  </div>
-  <footer><Foot></Foot></footer>
+  <header>
+    <Header></Header>
+  </header>
+  <main>
+    <nav>
+      <Naver></Naver>
+    </nav>
+    <div class="content">
+      <Home></Home>
+    </div>
+  </main>
+  <footer>
+    <Foot></Foot>
+  </footer>
 </template>
 
 <script>
@@ -36,17 +44,32 @@ body {
   min-width: 1022px;
   min-height: 670px;
 }
-.main {
+header {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+}
+main {
+  position: absolute;
+  top: 60px;
+  bottom: 72px;
   display: flex;
-  min-height: 100vh;
-  //   position: relative;
-  //   top: 0;
-  //   bottom: 72px;
-  //   height: auto;
+  height: auto;
+  width: 100%;
+  nav {
+    height: 100%;
+    width: 200px;
+  }
+  .content {
+    flex: 1;
+    height: 100%;
+  }
 }
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  height: 72px;
   width: 100%;
 }
 </style>
