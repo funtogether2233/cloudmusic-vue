@@ -11,7 +11,7 @@
     </ul>
     <div class="content">
       <!-- 首页轮播图 -->
-      <div class="carousel">
+      <div class="banner">
         <Carousel></Carousel>
       </div>
       <!-- 推荐歌单 -->
@@ -60,7 +60,7 @@ export default {
     flex-direction: row;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     margin: 0;
     padding-left: 30px;
     height: 60px;
@@ -78,7 +78,7 @@ export default {
   .content {
     margin: 0 auto;
     width: 1100px;
-    .carousel {
+    .banner {
       height: 240px;
       width: 100%;
     }
