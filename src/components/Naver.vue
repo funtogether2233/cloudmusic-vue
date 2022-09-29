@@ -1,6 +1,7 @@
 <template>
   <div class="naver">
     <div class="list">
+      <!-- 功能区 -->
       <ul class="button">
         <li>发现音乐</li>
         <li>播客</li>
@@ -9,6 +10,7 @@
         <li>直播</li>
         <li>私人FM</li>
       </ul>
+      <!-- 我的音乐 -->
       <ul>
         <li class="title">我的音乐</li>
         <li>
@@ -30,12 +32,14 @@
           <el-icon><StarFilled /></el-icon>我的收藏
         </li>
       </ul>
+      <!-- 创建的歌单 -->
       <ul>
         <li class="title">创建的歌单</li>
         <li>
           <el-icon><Folder /></el-icon>歌单
         </li>
       </ul>
+      <!-- 收藏的歌单 -->
       <ul>
         <li class="title">收藏的歌单</li>
         <li>

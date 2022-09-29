@@ -1,7 +1,10 @@
 <template>
   <div class="footer">
+    <!-- 左下角歌曲栏 -->
     <div class="song">
+      <!-- 歌曲封面 -->
       <img src="../assets/cloudmusic-logo.jpg" alt="cover" />
+      <!-- 歌曲信息 -->
       <div class="text">
         <div class="name">
           歌曲名<el-icon size="18px"><Star /></el-icon>
@@ -9,13 +12,17 @@
         <div class="author">作者</div>
       </div>
     </div>
+    <!-- 中间播放器 -->
     <div class="control">
       <AudioPlayer></AudioPlayer>
     </div>
+    <!-- 右下角歌曲设置 -->
     <div class="song-setting">
+      <!-- 播放列表 -->
       <div class="button">
         <el-icon size="20px"><Files /></el-icon>
       </div>
+      <!-- 音质选项 -->
       <div class="quality">音质</div>
     </div>
   </div>

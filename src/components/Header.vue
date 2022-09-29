@@ -1,6 +1,7 @@
 <template>
   <div class="head">
     <div class="left">
+      <!-- 左侧logo -->
       <div class="logo">
         <img
           src="../assets/cloudmusic-logo-reverse.png"
@@ -9,12 +10,15 @@
         <p>网易云音乐</p>
       </div>
       <div class="left-button">
+        <!-- 上一页 -->
         <div class="switch">
           <el-icon size="12px"><ArrowLeft /></el-icon>
         </div>
+        <!-- 下一页 -->
         <div class="switch">
           <el-icon size="12px"><ArrowRight /></el-icon>
         </div>
+        <!-- 搜索栏 -->
         <div>
           <el-input
             v-model="searchInfo"
@@ -23,6 +27,7 @@
             prefix-icon="Search"
           />
         </div>
+        <!-- 听音识曲 -->
         <div class="listen">
           <el-icon size="18px"><Microphone /></el-icon>
         </div>
@@ -30,15 +35,22 @@
     </div>
     <div class="right">
       <div class="right-button">
+        <!-- 皮肤主题 -->
         <el-icon size="18px"><Brush /></el-icon>
+        <!-- 设置 -->
         <el-icon size="18px"><Setting /></el-icon>
+        <!-- 消息 -->
         <el-icon size="18px"><Message /></el-icon>
+        <!-- 分隔线 -->
         <div class="divider"></div>
-
+        <!-- 最小化 -->
         <el-icon size="16px"><Minus /></el-icon>
+        <!-- 最大化 -->
         <el-icon size="16px"><FullScreen /></el-icon>
+        <!-- 退出 -->
         <el-icon size="16px"><Close /></el-icon>
       </div>
+      <!-- 用户头像与昵称 -->
       <div class="user">
         <img src="../assets/avatar.jpg" alt="cloudmusic-logo" />
         <p>网易云音乐</p>

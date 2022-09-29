@@ -1,15 +1,20 @@
 <template>
+  <!-- 顶部 -->
   <header>
     <Header></Header>
   </header>
+  <!-- 主体 -->
   <main>
+    <!-- 侧边导航栏 -->
     <nav>
       <Naver></Naver>
     </nav>
+    <!-- 内容区 -->
     <div class="content">
       <Home></Home>
     </div>
   </main>
+  <!-- 底部播放器 -->
   <footer>
     <Foot></Foot>
   </footer>
