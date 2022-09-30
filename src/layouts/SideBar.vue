@@ -74,7 +74,7 @@ export default {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background: #e0e0e0;
+  background: @boarder-color;
   visibility: hidden;
 }
 .naver:hover::-webkit-scrollbar-thumb {
@@ -85,7 +85,7 @@ export default {
   display: flex;
   overflow: auto;
   box-sizing: border-box;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid @boarder-color;
   height: 100%;
   width: 100%;
   .list {
@@ -94,10 +94,7 @@ export default {
     flex: 1;
     margin: 12px 2px 12px 12px;
     ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      color: #373737;
+      color: @font-color;
       // .button {
       //   font-size: 20px;
       // }

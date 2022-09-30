@@ -69,16 +69,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.flex {
-  display: flex;
-  align-items: center;
-}
 .icon-center {
   .flex();
   justify-content: center;
   border-radius: 50%;
 }
-@primary-color: #ec4141;
 .head {
   box-sizing: border-box;
   .flex();
@@ -87,8 +82,7 @@ export default {
   background-color: @primary-color;
   color: white;
   .left {
-    .flex();
-    flex: 1 0 auto;
+    .flex-10();
     .logo {
       .flex();
       margin: 0 75px 0 18px;
@@ -112,7 +106,7 @@ export default {
         background-color: #d93b3b;
         color: #e26a6a;
         :hover {
-          color: #f2baba;
+          color: @button-color;
         }
       }
       .search {
@@ -123,14 +117,14 @@ export default {
           padding: 0 12px;
           height: 32px;
           width: 160px;
-          background-color: #e33e3e;
-          color: #f2baba;
+          background-color: @button-background-color;
+          color: @button-color;
           font-size: 14px;
           ::placeholder {
-            color: #f2baba;
+            color: @button-color;
           }
           .el-input__prefix {
-            color: #f2baba;
+            color: @button-color;
           }
         }
       }
@@ -138,14 +132,13 @@ export default {
         .icon-center();
         height: 32px;
         width: 32px;
-        background-color: #e33e3e;
-        color: #f2baba;
+        background-color: @button-background-color;
+        color: @button-color;
       }
     }
   }
   .right {
-    .left();
-    flex: 1 0 auto;
+    .flex-10();
     flex-direction: row-reverse;
     .user {
       .flex();
@@ -165,11 +158,11 @@ export default {
       justify-content: space-between;
       margin-right: 24px;
       width: 240px;
-      color: #f2baba;
+      color: @button-color;
       .divider {
         height: 16px;
         width: 1px;
-        background-color: #f2baba;
+        background-color: @button-color;
       }
     }
   }

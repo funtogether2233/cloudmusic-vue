@@ -41,30 +41,27 @@ export default {
 .header {
   position: absolute;
   top: 0;
-  height: 60px;
+  height: @header-height;
   width: 100%;
 }
 .main {
   position: absolute;
-  top: 60px;
-  bottom: 72px;
+  top: @header-height;
+  bottom: @footer-height;
   display: flex;
-  height: auto;
   width: 100%;
   .side {
     flex: none;
-    height: 100%;
-    width: 200px;
+    width: @side-width;
   }
   .content {
     flex: 1;
-    height: 100%;
   }
 }
 .footer {
   position: absolute;
   bottom: 0;
-  height: 72px;
+  height: @footer-height;
   width: 100%;
 }
 </style>

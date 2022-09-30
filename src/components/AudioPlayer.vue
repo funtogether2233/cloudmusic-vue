@@ -167,10 +167,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.flex {
-  display: flex;
-  align-items: center;
-}
 .card {
   box-sizing: border-box;
   .option {
@@ -207,7 +203,7 @@ export default {
           top: -2px;
           width: 9px;
           height: 9px;
-          background-color: #ec4141;
+          background-color: @primary-color;
         }
       }
     }

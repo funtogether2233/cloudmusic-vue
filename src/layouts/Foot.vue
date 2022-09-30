@@ -39,10 +39,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.flex {
-  display: flex;
-  align-items: center;
-}
 .footer {
   box-sizing: border-box;
   border-top: 1px solid #e0e0e0;
@@ -51,8 +47,7 @@ export default {
   color: #373737;
   background-color: white;
   .song {
-    .flex();
-    flex: 1 0 auto;
+    .flex-10();
     img {
       margin: 0 12px;
       height: 48px;
@@ -78,9 +73,8 @@ export default {
     justify-content: center;
   }
   .song-setting {
-    .flex();
+    .flex-10();
     flex-direction: row-reverse;
-    flex: 1 0 auto;
     .button {
       .flex();
       margin-right: 20px;
@@ -89,11 +83,11 @@ export default {
       .flex();
       justify-content: center;
       margin-right: 20px;
-      border: 1px solid #ec4141;
+      border: 1px solid @primary-color;
       border-radius: 2px;
       height: 18px;
       width: 32px;
-      color: #ec4141;
+      color: @primary-color;
       font-size: 12px;
     }
   }

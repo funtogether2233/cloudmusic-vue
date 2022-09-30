@@ -12,12 +12,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.el-carousel__item {
-  img {
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-  }
-}
-</style>
+<style lang="less" scoped></style>

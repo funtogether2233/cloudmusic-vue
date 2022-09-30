@@ -42,11 +42,7 @@ export default {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background: #e0e0e0;
-}
-.flex {
-  display: flex;
-  align-items: center;
+  background: @boarder-color;
 }
 .home {
   box-sizing: border-box;

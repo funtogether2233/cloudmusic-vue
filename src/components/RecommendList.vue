@@ -4,9 +4,11 @@
       推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
     </div>
     <div class="playlist-content">
-      <div class="playlist-box" v-for="item in 10" :key="item">
-        <img src="../assets/img/cola-girl.png" />
-        <p>歌单{{item}}</p>
+      <div class="playlist-container" v-for="item in 10" :key="item">
+        <div class="playlist-cover">
+          <img src="../assets/img/cola-girl.png" />
+        </div>
+        <p>歌单{{ item }}</p>
       </div>
     </div>
   </div>
@@ -17,10 +19,6 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-.flex {
-  display: flex;
-  align-items: center;
-}
 .recommend-list {
   width: 100%;
   .title {
@@ -32,18 +30,16 @@ export default {};
     .flex();
     justify-content: space-between;
     flex-wrap: wrap;
-    .playlist-box {
+    margin-top: 12px;
+    .playlist-container {
       margin-bottom: 24px;
       height: 250px;
       width: 206px;
-      //   background-color: pink;
-      img {
-        border-radius: 5px;
+      .playlist-cover {
         height: 206px;
         width: 206px;
       }
       p {
-        margin: 0;
         color: #373737;
       }
       overflow: hidden;
