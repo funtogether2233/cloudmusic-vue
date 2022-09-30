@@ -15,7 +15,6 @@ export default {
 <style lang="less" scoped>
 .el-carousel__item {
   img {
-    //   margin: 0 auto;
     border-radius: 5px;
     height: 100%;
     width: 100%;
