@@ -38,14 +38,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-::-webkit-scrollbar {
-  display: none;
-}
-body {
-  box-sizing: border-box;
-  min-width: 1022px;
-  min-height: 670px;
-}
 .header {
   position: absolute;
   top: 0;
@@ -60,6 +52,7 @@ body {
   height: auto;
   width: 100%;
   .side {
+    flex: none;
     height: 100%;
     width: 200px;
   }
