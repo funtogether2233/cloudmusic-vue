@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import AudioPlayer from "./AudioPlayer.vue";
+import AudioPlayer from "../components/AudioPlayer.vue";
 export default {
   name: "Foot",
   components: {
