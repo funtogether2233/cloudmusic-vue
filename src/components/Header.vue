@@ -4,7 +4,7 @@
       <!-- 左侧logo -->
       <div class="logo">
         <img
-          src="../assets/cloudmusic-logo-reverse.png"
+          src="../assets/img/cloudmusic-logo-reverse.png"
           alt="cloudmusic-logo"
         />
         <p>网易云音乐</p>
@@ -52,7 +52,7 @@
       </div>
       <!-- 用户头像与昵称 -->
       <div class="user">
-        <img src="../assets/avatar.jpg" alt="cloudmusic-logo" />
+        <img src="../assets/img/avatar.jpg" alt="cloudmusic-logo" />
         <p>网易云音乐</p>
         <el-icon size="10px"><CaretBottom /></el-icon>
       </div>

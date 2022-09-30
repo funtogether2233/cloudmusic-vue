@@ -4,45 +4,9 @@
       推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
     </div>
     <div class="playlist-content">
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单1歌单1歌单1歌单1歌单1歌单1歌单1歌单1歌单1歌单1歌单1</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单2</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单3</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单4</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单5</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单6</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单7</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单8</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单9</p>
-      </div>
-      <div class="playlist-box">
-        <img src="../assets/cola-girl.png" />
-        <p>歌单10</p>
+      <div class="playlist-box" v-for="item in 10" :key="item">
+        <img src="../assets/img/cola-girl.png" />
+        <p>歌单{{item}}</p>
       </div>
     </div>
   </div>

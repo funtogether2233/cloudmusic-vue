@@ -82,9 +82,6 @@ export default {
       height: 240px;
       width: 100%;
     }
-    .recommend {
-      margin: 15px 0px;
-    }
   }
 }
 </style>

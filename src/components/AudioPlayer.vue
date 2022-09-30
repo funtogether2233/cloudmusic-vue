@@ -8,7 +8,7 @@
       ref="audio"
     >
       <!-- :src="audioSrc" -->
-      <source src="../assets/morning.mp3" />
+      <source src="../assets/audio/morning.mp3" />
     </audio>
     <div class="card">
       <div class="option">
