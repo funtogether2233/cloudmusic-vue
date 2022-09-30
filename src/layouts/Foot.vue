@@ -52,7 +52,7 @@ export default {
   background-color: white;
   .song {
     .flex();
-    flex: 1;
+    flex: 1 0 auto;
     img {
       margin: 0 12px;
       height: 48px;
@@ -80,7 +80,7 @@ export default {
   .song-setting {
     .flex();
     flex-direction: row-reverse;
-    flex: 1;
+    flex: 1 0 auto;
     .button {
       .flex();
       margin-right: 20px;

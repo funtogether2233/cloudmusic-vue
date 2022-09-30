@@ -13,4 +13,12 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  min-width: 1022px;
+  min-height: 670px;
+}
+</style>
