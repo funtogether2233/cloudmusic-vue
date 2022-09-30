@@ -1,23 +1,23 @@
 <template>
   <!-- 顶部 -->
-  <header>
+  <div class="header">
     <Header></Header>
-  </header>
+  </div>
   <!-- 主体 -->
-  <main>
+  <div class="main">
     <!-- 侧边导航栏 -->
-    <nav>
+    <div class="nav">
       <Naver></Naver>
-    </nav>
+    </div>
     <!-- 内容区 -->
     <div class="content">
       <Home></Home>
     </div>
-  </main>
+  </div>
   <!-- 底部播放器 -->
-  <footer>
+  <div class="footer">
     <Foot></Foot>
-  </footer>
+  </div>
 </template>
 
 <script>
@@ -38,31 +38,28 @@ export default {
 </script>
 
 <style lang="less">
-/* #app {
-} */
 ::-webkit-scrollbar {
   display: none;
 }
 body {
-  margin: 0;
   box-sizing: border-box;
   min-width: 1022px;
   min-height: 670px;
 }
-header {
+.header {
   position: absolute;
   top: 0;
   height: 60px;
   width: 100%;
 }
-main {
+.main {
   position: absolute;
   top: 60px;
   bottom: 72px;
   display: flex;
   height: auto;
   width: 100%;
-  nav {
+  .nav {
     height: 100%;
     width: 200px;
   }
@@ -71,7 +68,7 @@ main {
     height: 100%;
   }
 }
-footer {
+.footer {
   position: absolute;
   bottom: 0;
   height: 72px;
