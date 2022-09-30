@@ -3,7 +3,7 @@
     <!-- 左下角歌曲栏 -->
     <div class="song">
       <!-- 歌曲封面 -->
-      <img src="../assets/cloudmusic-logo.jpg" alt="cover" />
+      <img src="../assets/img/cloudmusic-logo.jpg" alt="cover" />
       <!-- 歌曲信息 -->
       <div class="text">
         <div class="name">
