@@ -12,7 +12,7 @@
     <div class="content">
       <!-- 首页轮播图 -->
       <div class="banner">
-        <Carousel></Carousel>
+        <Carousel :banners="banners"></Carousel>
       </div>
       <!-- 推荐歌单 -->
       <div class="recommend">
@@ -25,12 +25,39 @@
 <script>
 import Carousel from "../components/Carousel.vue";
 import RecommendList from "../components/RecommendList.vue";
+import http from "../plugins/http.js";
+import { onMounted, ref } from "vue";
 
 export default {
   name: "Recommend",
   components: {
     Carousel,
     RecommendList,
+  },
+  setup() {
+    onMounted(() => {
+      init();
+    });
+    let banners = ref([]);
+    const init = async () => {
+      try {
+        banners.value = await http
+          .get("/banner")
+          .then(function (response) {
+            return response.data.banners.map((banner) => {
+              return banner.imageUrl;
+            });
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    return {
+      banners,
+    };
   },
 };
 </script>

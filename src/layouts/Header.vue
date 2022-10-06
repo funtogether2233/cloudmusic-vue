@@ -20,12 +20,7 @@
         </div>
         <!-- 搜索栏 -->
         <div>
-          <el-input
-            v-model="searchInfo"
-            class="search"
-            placeholder="搜索"
-            prefix-icon="Search"
-          />
+          <el-input class="search" placeholder="搜索" prefix-icon="Search" />
         </div>
         <!-- 听音识曲 -->
         <div class="listen">
