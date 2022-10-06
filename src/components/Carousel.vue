@@ -12,5 +12,3 @@ export default {
   props: ["banners"],
 };
 </script>
-
-<style lang="less" scoped></style>

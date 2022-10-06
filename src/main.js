@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-import axios from "./plugins/http.js";
+import axios from "./api/request";
 
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";

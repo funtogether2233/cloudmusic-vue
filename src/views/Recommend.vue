@@ -25,7 +25,8 @@
 <script>
 import Carousel from "../components/Carousel.vue";
 import RecommendList from "../components/RecommendList.vue";
-import http from "../plugins/http.js";
+import http from "../api/request";
+// import getBanners from "../api/Recommend.js";
 import { onMounted, ref } from "vue";
 
 export default {
