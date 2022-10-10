@@ -6,13 +6,17 @@ const REQUEST_URL = {
 };
 // 获取轮播图
 export const getBanners = () => {
-  return getRequest(REQUEST_URL.banner)
-    .then((response) => {
-      return response.data.banners.map((banner) => {
-        return banner.imageUrl;
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return (
+    // http
+    //   .get(REQUEST_URL.banner)
+      getRequest(REQUEST_URL.banner)
+      .then((response) => {
+        return response.data.banners.map((banner) => {
+          return banner.imageUrl;
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  );
 };
