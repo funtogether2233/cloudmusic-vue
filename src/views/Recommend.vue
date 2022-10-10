@@ -25,8 +25,7 @@
 <script>
 import Carousel from "../components/Carousel.vue";
 import RecommendList from "../components/RecommendList.vue";
-import http from "../api/request";
-// import getBanners from "../api/Recommend.js";
+import { getBanners } from "../api/recommend.js";
 import { onMounted, ref } from "vue";
 
 export default {
@@ -39,19 +38,10 @@ export default {
     onMounted(() => {
       init();
     });
-    let banners = ref([]);
+    const banners = ref([]);
     const init = async () => {
       try {
-        banners.value = await http
-          .get("/banner")
-          .then(function (response) {
-            return response.data.banners.map((banner) => {
-              return banner.imageUrl;
-            });
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        banners.value = await getBanners();
       } catch (error) {
         console.error(error);
       }
