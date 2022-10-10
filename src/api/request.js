@@ -7,20 +7,20 @@ const http = axios.create({
   timeout: 2000, //请求超时设置，单位ms
 });
 
-// http.interceptors.response.use(
-//   (response) => {
-//     if (response.status === 200) {
-//       return response;
-//     }
-//   },
-//   (err) => {
-//     return Promise.reject(err);
-//   }
-// );
+http.interceptors.response.use(
+  (response) => {
+    if (response.status === 200) {
+      return response;
+    }
+  },
+  (err) => {
+    return Promise.reject(err);
+  }
+);
 
-// export const getRequest = (url, params = {}) => {
-//   return http.get(url, { params: { ...params, cookie } });
-// };
+export const getRequest = (url, params = {}) => {
+  return http.get(url, { params: { ...params, cookie } });
+};
 
 //导出我们建立的axios实例模块，ES6 export用法
 export default http;
