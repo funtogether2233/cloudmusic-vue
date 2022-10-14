@@ -28,7 +28,7 @@
 <script>
 import Carousel from "../components/Carousel.vue";
 import RecommendList from "../components/RecommendList.vue";
-import { getBanners, getRecommendLists } from "../api/recommend.js";
+import { getBanners, getRecommendLists } from "../api/recommend/index.js";
 import { onMounted, ref } from "vue";
 
 export default {
