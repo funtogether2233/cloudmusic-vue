@@ -1,40 +1,35 @@
 <template>
-  <div class="recommend-list">
-    <div class="playlist-content">
-      <div class="playlist-container" v-for="item in 10" :key="item">
-        <div class="playlist-cover">
-          <img src="../assets/img/cola-girl.png" />
-        </div>
-        <p>歌单{{ item }}</p>
-      </div>
-    </div>
-
-    <div class="playlist-content">
-      <div class="playlist-container" v-for="item in 10" :key="item">
-        <div class="playlist-cover">
-          <img src="../assets/img/cola-girl.png" />
-        </div>
-        <p>歌单{{ item }}</p>
-      </div>
-    </div>
-
-    <div class="recommend-playlist">
-      <play-list-item
-        v-for="item in playLists"
-        :playListItem="item"
-        :key="item.id"
-      />
-    </div>
+  <div>
+    <img src="playListItem.picUrl" />
   </div>
+
+  <!-- <div class="recommend-list">
+    <div class="playlist-content">
+      <div class="playlist-container" v-for="item in 10" :key="item">
+        <div class="playlist-cover">
+          <img src="../assets/img/cola-girl.png" />
+        </div>
+        <p>歌单{{ item }}</p>
+      </div>
+    </div>
+  </div> -->
 </template>
 
 <script>
 export default {
-  setup() {},
+  name: "PlayListItem",
+  props: ["playListItem"],
+  setup() {
+    console.log(playListItem);
+  },
 };
 </script>
 
 <style lang="less" scoped>
+img {
+  height: 206px;
+  width: 206px;
+}
 .recommend-list {
   width: 100%;
   .playlist-content {

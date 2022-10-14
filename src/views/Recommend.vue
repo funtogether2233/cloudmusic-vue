@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="recommend">
     <!-- 导航栏 -->
     <ul class="nav">
       <li>个性推荐</li>
@@ -12,14 +12,20 @@
     <div class="content">
       <!-- 首页轮播图 -->
       <div class="banner">
-        <Carousel :banners="banners"></Carousel>
+        <Carousel :banners="banners" />
       </div>
       <!-- 推荐歌单 -->
-      <div class="recommend">
+      <div class="recommend-list">
         <div class="title">
           推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
         </div>
-        <RecommendList></RecommendList>
+        <div class="playlist">
+          <PlayListItem
+            v-for="item in playLists"
+            :playListItem="item"
+            :key="item.id"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -27,7 +33,7 @@
 
 <script>
 import Carousel from "../components/Carousel.vue";
-import RecommendList from "../components/RecommendList.vue";
+import PlayListItem from "../components/PlayListItem.vue";
 import { getBanners, getRecommendLists } from "../api/recommend/index.js";
 import { onMounted, ref } from "vue";
 
@@ -35,25 +41,25 @@ export default {
   name: "Recommend",
   components: {
     Carousel,
-    RecommendList,
+    PlayListItem,
   },
   setup() {
     onMounted(() => {
       init();
     });
     const banners = ref([]);
-    const recommendLists = ref([]);
+    const playLists = ref([]);
     const init = async () => {
       try {
         banners.value = await getBanners();
-        recommendLists.value = await getRecommendLists();
+        playLists.value = await getRecommendLists();
       } catch (error) {
         console.error(error);
       }
     };
     return {
       banners,
-      recommendLists,
+      playLists,
     };
   },
 };
@@ -68,7 +74,7 @@ export default {
   border-radius: 3px;
   background: @boarder-color;
 }
-.home {
+.recommend {
   box-sizing: border-box;
   overflow: auto;
   height: 100%;
@@ -85,7 +91,7 @@ export default {
     padding-left: 30px;
     height: 60px;
     width: 100%;
-    color: #373737;
+    color: @font-color;
     background-color: white;
     li {
       margin-right: 20px;
@@ -102,12 +108,18 @@ export default {
       height: 240px;
       width: 100%;
     }
-  }
-  .recommend {
-    .title {
-      .flex();
-      font-size: 18px;
-      font-weight: bold;
+    .recommend-list {
+      .title {
+        .flex();
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .playlist {
+        .flex();
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
     }
   }
 }
