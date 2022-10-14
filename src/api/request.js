@@ -23,8 +23,8 @@ http.interceptors.response.use(
   }
 );
 
-export const getRequest = (url) => {
-  return http.get(url);
+export const getRequest = (url, params = {}) => {
+  return http.get(url, { params: { ...params } });
 };
 
 // export const getRequest = (url, params = {}) => {

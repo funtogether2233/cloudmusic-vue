@@ -13,7 +13,7 @@ export const getBanners = () => {
       console.log(error);
     });
 };
-
+// 获取推荐歌单
 export const getRecommendLists = () => {
   return getRequest(REQUEST_URL.recommendList, { limit: 10 })
     .then(convertPlayLists)
