@@ -16,6 +16,9 @@
       </div>
       <!-- 推荐歌单 -->
       <div class="recommend">
+        <div class="title">
+          推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
+        </div>
         <RecommendList></RecommendList>
       </div>
     </div>
@@ -25,7 +28,7 @@
 <script>
 import Carousel from "../components/Carousel.vue";
 import RecommendList from "../components/RecommendList.vue";
-import { getBanners } from "../api/recommend.js";
+import { getBanners, getRecommendLists } from "../api/recommend.js";
 import { onMounted, ref } from "vue";
 
 export default {
@@ -39,15 +42,18 @@ export default {
       init();
     });
     const banners = ref([]);
+    const recommendLists = ref([]);
     const init = async () => {
       try {
         banners.value = await getBanners();
+        recommendLists.value = await getRecommendLists();
       } catch (error) {
         console.error(error);
       }
     };
     return {
       banners,
+      recommendLists,
     };
   },
 };
@@ -95,6 +101,13 @@ export default {
     .banner {
       height: 240px;
       width: 100%;
+    }
+  }
+  .recommend {
+    .title {
+      .flex();
+      font-size: 18px;
+      font-weight: bold;
     }
   }
 }

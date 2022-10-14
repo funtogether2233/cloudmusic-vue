@@ -1,8 +1,5 @@
 <template>
   <div class="recommend-list">
-    <div class="title">
-      推荐歌单<el-icon size="16px"><ArrowRight /></el-icon>
-    </div>
     <div class="playlist-content">
       <div class="playlist-container" v-for="item in 10" :key="item">
         <div class="playlist-cover">
@@ -11,21 +8,35 @@
         <p>歌单{{ item }}</p>
       </div>
     </div>
+
+    <div class="playlist-content">
+      <div class="playlist-container" v-for="item in 10" :key="item">
+        <div class="playlist-cover">
+          <img src="../assets/img/cola-girl.png" />
+        </div>
+        <p>歌单{{ item }}</p>
+      </div>
+    </div>
+
+    <div class="recommend-playlist">
+      <play-list-item
+        v-for="item in playLists"
+        :playListItem="item"
+        :key="item.id"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  setup() {},
+};
 </script>
 
 <style lang="less" scoped>
 .recommend-list {
   width: 100%;
-  .title {
-    .flex();
-    font-size: 18px;
-    font-weight: bold;
-  }
   .playlist-content {
     .flex();
     justify-content: space-between;
