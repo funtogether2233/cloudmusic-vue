@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <img src="playListItem.picUrl" />
+  <div class="play-list-item">
+    <img :src="playListItem.picUrl" />
+    <div class="play-count">
+      <el-icon><VideoPlay /></el-icon>
+      <p>{{ playListItem.playCount }}</p>
+    </div>
+    <p class="name">{{ playListItem.name }}</p>
   </div>
 
   <!-- <div class="recommend-list">
@@ -20,16 +25,37 @@ export default {
   name: "PlayListItem",
   props: ["playListItem"],
   setup() {
-    console.log(playListItem);
+    // console.log(playListItem);
   },
 };
 </script>
 
 <style lang="less" scoped>
-img {
-  height: 206px;
-  width: 206px;
+.play-list-item {
+  position: relative;
+  margin-top: 10px;
+  height: 260px;
+  width: 205px;
+  img {
+    height: 205px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .play-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    .flex();
+    font-size: 12px;
+    color: white;
+  }
+  .name {
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
 }
+
 .recommend-list {
   width: 100%;
   .playlist-content {

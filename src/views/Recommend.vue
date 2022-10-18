@@ -118,7 +118,6 @@ export default {
         .flex();
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-top: 12px;
       }
     }
   }
